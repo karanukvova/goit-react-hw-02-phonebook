@@ -1,5 +1,6 @@
-import React from "react";
-export default class ContactList extends React.Component {
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+class ContactList extends Component {
   deleteId = Id => {
     this.props.del(Id);
   };
@@ -23,3 +24,7 @@ export default class ContactList extends React.Component {
     return <ul>{this.createList()}</ul>;
   }
 }
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+};
+export default ContactList;
